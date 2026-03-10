@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Image Recognition</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS (No Bootstrap) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- ml5 & Webcam -->
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-content">
+      <a class="navbar-brand" href="#">
+        <i class="fa-solid fa-brain"></i>
+        <span>VisionAI Framework</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container main-layout">
+
+    <!-- Left Column: Instructions & Model Info -->
+    <div class="sidebar">
+      <div class="card object-card">
+        <div class="card-header">
+          <div class="icon-box">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h4>Target Objects</h4>
+        </div>
+        <p class="description">This AI model has been precisely trained to identify the following everyday objects with
+          extraordinary accuracy:</p>
+
+        <ul class="object-list">
+          <li>
+            <i class="fa-regular fa-clock list-icon"></i>
+            <span class="list-text">Watch</span>
+            <i class="fa-solid fa-check check-icon"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-utensil-spoon list-icon"></i>
+            <span class="list-text">Spoon</span>
+            <i class="fa-solid fa-check check-icon"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile-screen-button list-icon"></i>
+            <span class="list-text">Mobile Phone</span>
+            <i class="fa-solid fa-check check-icon"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-bottle-water list-icon"></i>
+            <span class="list-text">Water Bottle</span>
+            <i class="fa-solid fa-check check-icon"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Column: Workspace -->
+    <div class="workspace">
+      <div class="card workspace-card">
+
+        <div class="camera-section">
+          <!-- Camera View -->
+          <div class="camera-col">
+            <h6 class="section-title"><i class="fa-solid fa-video"></i> Live Feed</h6>
+            <div class="camera-wrapper">
+              <div id="camera"></div>
+              <div class="camera-overlay"></div>
+            </div>
+            <button onclick="take_snapshot();" class="btn btn-outline-primary capture-btn">
+              <i class="fa-solid fa-camera"></i> Capture Image
+            </button>
+          </div>
+
+          <!-- Snapshot View -->
+          <div class="camera-col">
+            <h6 class="section-title"><i class="fa-regular fa-image"></i> Snapshot Preview</h6>
+            <div class="snapshot-wrapper">
+              <div id="result" class="result-placeholder">
+                <div class="empty-state">
+                  <i class="fa-regular fa-image empty-icon"></i>
+                  <p>Your capture will appear here</p>
+                </div>
+              </div>
+            </div>
+            <button onclick="check();" id="identify-btn" class="btn btn-primary identify-btn" disabled>
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Identify Image
+            </button>
+            <div id="model-status" class="model-status warning">
+              <i class="fa-solid fa-circle-notch fa-spin"></i> Loading AI Model...
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="result-box hidden" id="result-container">
+          <h5 class="result-title"><i class="fa-solid fa-microchip"></i> Recognition Result</h5>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-label">Detected Object</span>
+              <span id="result_object_name" class="result-value">-</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Confidence Level</span>
+              <div class="confidence-wrapper">
+                <span id="result_object_accuracy" class="confidence-value">-</span>
+                <span class="confidence-percent">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Custom Logic -->
+  <script src="script.js"></script>
+</body>
+
+</html>
