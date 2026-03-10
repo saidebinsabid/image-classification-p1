@@ -9,17 +9,22 @@ This project was built to recognize the following target objects with high accur
 - **Mobile Phone**
 - **Water Bottle**
 
-## Technologies Used
-- **Frontend Core:** HTML5, CSS3 (Custom CSS, no Bootstrap), JavaScript (ES6)
-- **Webcam Access:** [Webcam.js (v1.0.26)](https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js)
-- **Machine Learning Library:** [ml5.js (v0.4.3)](https://unpkg.com/ml5@0.4.3/dist/ml5.min.js)
-- **Pre-trained AI Model:** Google Teachable Machine
-- **Typography & Icons:** Google Fonts (Poppins), FontAwesome (v6.4.0)
+## 🌐 Live Demo
+- **Website Live Link:** [https://saidebinsabid.github.io/image-classification-p1/](https://saidebinsabid.github.io/image-classification-p1/)
 
-## Important Links
-- **AI Model Link:** [Teachable Machine Model (`model.json`)](https://teachablemachine.withgoogle.com/models/v_sl95BzE/model.json)
+## 🛠️ Technologies Used
+- 💻 **Frontend Core:** HTML5, CSS3 (Custom CSS, no Bootstrap), JavaScript (ES6)
+- 📷 **Webcam Access:** Webcam.js (v1.0.26)
+- 🧠 **Machine Learning Library:** ml5.js (v0.4.3)
+- 🤖 **Pre-trained AI Model:** Google Teachable Machine
+- 🖋️ **Typography & Icons:** Google Fonts (Poppins), FontAwesome (v6.4.0)
+
+## 🔗 Required CDNs & Links
+- **Google Fonts (Poppins):** `https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap`
+- **FontAwesome (v6.4.0):** `https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css`
 - **ml5.js Library:** `https://unpkg.com/ml5@0.4.3/dist/ml5.min.js`
 - **Webcam.js Library:** `https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js`
+- **AI Model Link:** [Teachable Machine Model (`model.json`)](https://teachablemachine.withgoogle.com/models/v_sl95BzE/model.json)
 
 ## How It Works
 
