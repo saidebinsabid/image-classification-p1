@@ -21,7 +21,6 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
-    -webkit-font-smoothing: antialiased;
     line-height: 1.5;
 }
 
@@ -74,15 +73,10 @@ body {
 .card {
     background: var(--card-bg);
     border-radius: 1.25rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
-}
-
-.card:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
 }
 
 .workspace-card {
@@ -114,7 +108,6 @@ body {
 .icon-box {
     width: 48px;
     height: 48px;
-    min-width: 48px;
     border-radius: 14px;
     background-color: var(--light-primary);
     color: var(--primary-color);
@@ -133,8 +126,6 @@ body {
 /* Lists */
 .object-list {
     list-style: none;
-    display: flex;
-    flex-direction: column;
 }
 
 .object-list li {
@@ -142,18 +133,10 @@ body {
     align-items: center;
     padding: 1rem 0;
     border-bottom: 1px dashed var(--border-color);
-    transition: all 0.2s ease;
 }
 
 .object-list li:last-child {
     border-bottom: none;
-}
-
-.object-list li:hover {
-    padding-left: 10px;
-    background-color: #f8fafc;
-    border-radius: 8px;
-    border-bottom-color: transparent;
 }
 
 .list-icon {
@@ -181,7 +164,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    flex-grow: 1;
 }
 
 @media (max-width: 768px) {
@@ -203,11 +185,6 @@ body {
     color: var(--text-muted);
     margin-bottom: 1rem;
     font-size: 0.875rem;
-    letter-spacing: 0.5px;
-}
-
-.section-title i {
-    margin-right: 0.5rem;
 }
 
 .camera-wrapper,
@@ -219,25 +196,15 @@ body {
     border-radius: 16px;
     overflow: hidden;
     position: relative;
-    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid transparent;
-    transition: all 0.3s ease;
-    margin: 0 auto 1.5rem auto;
-}
-
-.camera-wrapper:hover {
-    border-color: rgba(37, 99, 235, 0.3);
+    margin-bottom: 1.5rem;
 }
 
 #camera {
     width: 100% !important;
     height: 100% !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #camera video {
@@ -256,16 +223,6 @@ body {
     border: 2px dashed rgba(255, 255, 255, 0.4);
     border-radius: 8px;
     pointer-events: none;
-    z-index: 10;
-}
-
-.result-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
 }
 
 #selfie_image {
@@ -278,6 +235,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--text-muted);
 }
 
 .empty-icon {
@@ -286,43 +244,28 @@ body {
     opacity: 0.25;
 }
 
-.empty-state p {
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
 /* Buttons */
 .btn {
     width: 100%;
     padding: 0.75rem 1.5rem;
     border-radius: 10px;
     font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.3px;
-    transition: all 0.2s ease;
     cursor: pointer;
-    font-family: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     border: none;
-}
-
-.btn i {
-    font-size: 1.1rem;
+    font-family: inherit;
 }
 
 .btn-primary {
     background-color: var(--primary-color);
     color: white;
-    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2), 0 2px 4px -1px rgba(37, 99, 235, 0.1);
 }
 
 .btn-primary:hover:not(:disabled) {
     background-color: var(--primary-color-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3), 0 4px 6px -2px rgba(37, 99, 235, 0.15);
 }
 
 .btn-outline-primary {
@@ -334,18 +277,11 @@ body {
 .btn-outline-primary:hover {
     background-color: var(--primary-color);
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
-}
-
-.btn:active:not(:disabled) {
-    transform: translateY(0);
 }
 
 .btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    box-shadow: none;
 }
 
 /* Status text */
@@ -355,23 +291,13 @@ body {
     font-weight: 600;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 0.25rem;
 }
 
-.warning {
-    color: var(--warning-color);
-}
-
-.success {
-    color: var(--success-color);
-}
+.warning { color: var(--warning-color); }
+.success { color: var(--success-color); }
 
 /* Results */
-.hidden {
-    display: none !important;
-}
-
 .result-box {
     margin-top: 3rem;
     padding: 2.5rem;
@@ -385,15 +311,10 @@ body {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 2rem;
-    color: var(--text-main);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-}
-
-.result-title i {
-    color: var(--primary-color);
 }
 
 .result-grid {
@@ -412,21 +333,13 @@ body {
     background-color: white;
     border-radius: 0.75rem;
     padding: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--border-color);
-    transition: transform 0.2s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.result-item:hover {
-    transform: translateY(-2px);
 }
 
 .result-label {
-    display: block;
     color: var(--text-muted);
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -438,13 +351,6 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
-}
-
-.confidence-wrapper {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.25rem;
 }
 
 .confidence-value {
@@ -459,19 +365,6 @@ body {
     color: var(--success-color);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.hidden {
+    display: none !important;
 }

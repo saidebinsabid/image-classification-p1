@@ -99,15 +99,8 @@ function gotResult(error, results) {
     else {
         console.log(results); // Print the full answer in the developer console to look at it
 
-        // Show the result box on the screen (by removing the 'hidden' class)
-        resultContainer.classList.remove('hidden');
-
-        // This is a small trick to make the result box animate softly onto the screen
-        resultContainer.style.animation = 'none';
-        resultContainer.offsetHeight; // This makes the browser quickly refresh the box
-        resultContainer.style.animation = null;
-        resultContainer.classList.add('fade-in');
-
+        // We guessed successfully! Let's update the results on the screen.
+        
         // Find the HTML elements where we will write the Object Name and Accuracy
         const resultObjectName = document.getElementById("result_object_name");
         const resultObjectAccuracy = document.getElementById("result_object_accuracy");
